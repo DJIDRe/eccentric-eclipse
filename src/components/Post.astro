@@ -6,27 +6,27 @@ type Props = {
     posts: CollectionEntry<'posts'>;
 };
 
-const { post } = Astro.props;
+const { posts } = Astro.props;
 ---
 
 <article>
-    <a href={`/blog/${post.slug}`}>
+    <a href={`/blog/${posts.slug}`}>
         <Image 
-            src={post.data.image}
+            src={posts.data.image}
             width={600}
             height={600 / 1.5}
-            alt={post.data.title}
+            alt={posts.data.title}
             class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
         />
     </a>
     <a 
-        href={`/blog/${post.slug}`}
+        href={`/blog/${posts.slug}`}
         class="text-4xl text-zinc-900 font-semibold line-clamp-2"
     >
-        <h2>{post.data.title}</h2>
+        <h2>{posts.data.title}</h2>
     </a>
     <p class="text-zinc-500 text-2xl line-clamp-2">
-        {post.body}
+        {posts.body}
     </p>
 
 </article>
